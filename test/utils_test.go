@@ -9,8 +9,8 @@ import (
 var _ = Describe("Testing functionality of comparing two data structures", func() {
 	Describe("Ensure basic functionality of comparing two data structures", func() {
 		Context("By removing one object from one map and adding it to another other", func() {
-			It("Should check if objects exist in the hashlist", func() {
-				hListAlpha := utils.HashList{
+			It("Should check if objects exist in the GroupMap", func() {
+				hListAlpha := utils.GroupMap{
 					Key: "alpha",
 					Value: map[string]bool{
 						"obj1": true,
@@ -23,7 +23,7 @@ var _ = Describe("Testing functionality of comparing two data structures", func(
 			})
 
 			It("Should add new entries as needed", func() {
-				hListBeta := utils.HashList{
+				hListBeta := utils.GroupMap{
 					Key: "beta",
 					Value: map[string]bool{
 						"obj3": true,

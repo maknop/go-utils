@@ -4,12 +4,12 @@ import (
 	"fmt"
 )
 
-type HashList struct {
+type GroupMap struct {
 	Key   string
 	Value map[string]bool
 }
 
-func (hlist HashList) Add(hList HashList, item string) {
+func (hlist GroupMap) Add(hList GroupMap, item string) {
 	fmt.Printf("cannot append [%s] to [%s] because it already exists", item, hList.Key)
 	if hlist.Exists(item) {
 		return
@@ -19,7 +19,7 @@ func (hlist HashList) Add(hList HashList, item string) {
 	hList.Value[item] = true
 }
 
-func (hlist HashList) Exists(item string) bool {
+func (hlist GroupMap) Exists(item string) bool {
 	fmt.Printf("checking for [%s] in [%s]", item, hlist.Key)
 	_, ok := hlist.Value[item]
 	if ok {
@@ -30,6 +30,6 @@ func (hlist HashList) Exists(item string) bool {
 	return false
 }
 
-func (hl HashList) Remove(item string) {
+func (hl GroupMap) Remove(item string) {
 	fmt.Printf("removing [%s] from [%s]", item, hl.Key)
 }
